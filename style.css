@@ -9,13 +9,8 @@ header {
     text-align: center;
     background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
     color: aliceblue;
-    margin-top: -25px;
+    margin-top: 0px;
     padding: 10px;
-}
-
-main .search-container {
-    display: flex;
-    justify-content: space-between;
 }
 
 
@@ -29,6 +24,7 @@ form h2 {
     border-radius: 10px;
     margin-left: 20px;
     margin-bottom: 25px;
+    font-size: 20px;
 }
 
 #search-button {
@@ -41,23 +37,5 @@ form h2 {
     font-size: 15px;
 }
 
-#search {
-    font-size: 20px;
-}
-
-.history-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.overview-container {
-    display: flex;
-    justify-content: space-around;
-}
-
-.forecast-container {
-    display: flex;
-    justify-content: space-around;
-}
 
 
