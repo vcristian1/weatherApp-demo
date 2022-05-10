@@ -13,12 +13,16 @@ header {
     padding: 10px;
 }
 
+main {
+    margin-top: 10px;
+    text-align: center;
+}
 
 form h2 {
     text-align: center;
 }
 
-#search {
+#search-input {
     height: 40px;
     width: 300px;
     border-radius: 10px;
