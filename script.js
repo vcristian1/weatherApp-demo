@@ -3,41 +3,35 @@ let searchInput = document.querySelectorAll("#search-input");
 let overviewContainer = document.querySelectorAll(".overview-container");
 let historyContainer = document.querySelectorAll(".search-history");
 let fiveDayForecast = document.querySelectorAll(".five-day-forecast");
-let city = searchInput.value
+var city = "Chicago"
 
-let formSubmitHandler = function (event) {
-    let city = searchInput.value.trim();
-  
-    if (city) {
-      showFiveDayForecast(city);
-  
-      fiveDayForecast.textContent = '';
-      searchInput.value = '';
-    } else {
-      alert('Please enter a valid city name');
-    }
-  };
 
-function showFiveDayForecast(city) {
-    let key = 'fc4d1682ddb59485eb333396c62bf9ea';
-    //console saying APIKey is invalid.
-    let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + key
+function showFiveDayForecast() {
+    var APIkey = '63e195e07e4897eb45e421f76c43b1dd';
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
    
     fetch(apiUrl)  
     .then(function(resp) { return resp.json() }) // Convert data to json
     .then(function(data) {
-      console.log(data);
+      drawWeather(data);
+      console.log(apiUrl)
     })
     .catch(function() {
       // catch any errors
     });
 }
+
+function drawWeather( d ) {
+	var fahrenheight = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
+	
+    document.getElementById('location').innerHTML = "City: " + d.name;
+	document.getElementById('description').innerHTML = d.weather[0].description;
+	document.getElementById('temp').innerHTML = "Temp: " + fahrenheight + '&deg;';
+    document.getElementById('humidity').innerHTML = "Humidity: " + d.main.humidity + '%';
+}
   
 window.onload = function() {
-    let APIKey = "fc4d1682ddb59485eb333396c62bf9ea";
-    showFiveDayForecast(APIKey);
-  }
+    showFiveDayForecast();
+}
 
-
-
-$(searchForm).submit(showFiveDayForecast);
+$("#searchForm").submit(showFiveDayForecast);
