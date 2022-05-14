@@ -1,11 +1,12 @@
 var searchForm = document.getElementById("search-form");
 var searchInput = document.getElementById("search-input");
 var overviewContainer = document.getElementById("overview-container");
-var historyContainer = document.getElementById("search-history");
+var historyList = document.getElementById("search-history-list");
 var fiveDayForecast = document.getElementById("five-day-forecast");
 var searchButton = document.getElementById("search-button");
 var city = searchInput
 var APIkey = '63e195e07e4897eb45e421f76c43b1dd';
+var searches =[]
 
 function displayDate() {
   $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
@@ -23,7 +24,9 @@ function currentForecast(event) {
     .then(function(data) {
       drawCurrentForecast(data);
       drawFiveDayForecast(data);
-      drawSearchHistory(data)
+      init()
+      drawSearchHistory()
+      storeSearches()
       console.log(apiUrl1);
       console.log(apiUrl2);
       console.log(city.value)
@@ -88,26 +91,55 @@ function drawFiveDayForecast( d ) {
     
 }
 
-function drawSearchHistory(d) {
 
-  let content = city.value
-  let searchHistory = $(this).children(".search-history").attr("class");
+function drawSearchHistory() {
+  let searches =[]
+  
+  historyList.innerHTML = city.value;
+  
+  for (var i = 0; i < searches.length; i++) {
+    city.value = searches[i];
 
-  localStorage.setItem(content, searchHistory)
+    var li = document.createElement("li");
+    li.textContent = city.value;
+    li.setAttribute("data-index", i);
 
-  for (i = 0; i <= content.length; i++){
-    if (content.length = 0) {
-      document.getElementById("search-history1").innerHTML = "-" + city.value;
-      localStorage.setItem(content, searchHistory)
-    }
-    if (content.length = 1) {
-      $("#search-history1").val(localStorage.getItem("search-history1"));
-      document.getElementById("search-history2").innerHTML = "-" + city.value;
-    }
-  }  
+    historyList.appendChild(li);
+  }
 }
 
-$("#search-history1").val(localStorage.getItem("search-history1"));
+function init() {
+  // TODO: What is the purpose of the following line of code?
+  var storedSearches = JSON.parse(localStorage.getItem("searches"));
+  // TODO: Describe the functionality of the following `if` statement.
+  if (storedSearches !== null) {
+    searches = storedSearches;
+  }
+  // TODO: Describe the purpose of the following line of code.
+  drawSearchHistory();
+}
+
+function storeSearches() {
+  // TODO: Describe the purpose of the following line of code.
+  localStorage.setItem("searches", JSON.stringify(searches));
+}
+// TODO: Describe the purpose of the following line of code.
+searchForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  var searchText = searchInput.value.trim();
+  // TODO: Describe the functionality of the following `if` statement.
+  if (searchText === "") {
+    return;
+  }
+ // TODO: Describe the purpose of the following lines of code.
+  searches.push(searchText);
+  searchInput.value = "";
+ 
+  // TODO: What will happen when the following functions are called?
+  storeSearches();
+  drawSearchHistory();
+});
+
 
 searchButton.addEventListener("click", getWeather);
 
