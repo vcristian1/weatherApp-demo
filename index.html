@@ -15,6 +15,8 @@
     <header>
         <div class="container">
             <h1>Weather Dashboard</h1>
+            <p id="currentDay"></p>
+            <!--Input date and time from moment.js here-->
         </div>
     </header>
 
@@ -26,7 +28,7 @@
                     <h2>Search for a City:</h2>
                     <label for="search"></label>
                     <input type="text" id="search-input" placeholder="San Diego">
-                    <button type="submit" id="search-button">Search</button>
+                    <button type="submit" class ="searchBtn" id="search-button">Search</button>
                 </form>
             </div>
             
@@ -34,7 +36,7 @@
                 <h2>Overview &#127783</h2>
                 <div id="location"></div>
                 <div id="temp"></div>
-                <div id="description"></div>
+                <div id="wind"></div>
                 <div id="humidity"></div>
             </div>
         </div>
@@ -42,20 +44,50 @@
         <div class="row">
             <div class="col search-history">
                 <h2>Search History</h2>
+                <div id="search-history1"></div>
+                <div id="search-history2"></div>
+                <div id="search-history3"></div>
+                <div id="search-history4"></div>
+                <div id="search-history5"></div>
+                <div id="search-history6"></div>
+                <div id="search-history7"></div>
+                <div id="search-history8"></div>
             </div>    
             
             <div class="col five-day-forecast">
                 <h2>Five Day Forecast &#127783</h2>
-                <div id="DayOne"></div>
-                <div id="DayTwo"></div>
-                <div id="DayThree"></div>
-                <div id="DayFour"></div>
-                <div id="DayFive"></div>
+                <div class="DayOne">
+                    <div id="d1-temp"></div>
+                    <div id="d1-wind"></div>
+                    <div id="d1-humidity"></div>
+                </div>
+                <div class="DayTwo">
+                    <div id="d2-temp"></div>
+                    <div id="d2-wind"></div>
+                    <div id="d2-humidity"></div>
+                </div>
+                <div class="DayThree">
+                    <div id="d3-temp"></div>
+                    <div id="d3-wind"></div>
+                    <div id="d3-humidity"></div>
+                </div>
+                <div class="DayFour">
+                    <div id="d4-temp"></div>
+                    <div id="d4-wind"></div>
+                    <div id="d4-humidity"></div>
+                </div>
+                <div class="DayFive">
+                    <div id="d5-temp"></div>
+                    <div id="d5-wind"></div>
+                    <div id="d5-humidity"></div>
+                </div>
             </div> 
         </div>
     </main>
 
-    <script src="script.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

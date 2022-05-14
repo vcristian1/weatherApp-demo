@@ -18,6 +18,10 @@ main {
     text-align: center;
 }
 
+main h2 {
+    margin-top: 15px;
+}
+
 form h2 {
     text-align: center;
 }
@@ -41,16 +45,28 @@ form h2 {
     font-size: 15px;
 }
 
-.overview {
-    border: 2px solid black;
-    
-}
-
 .overview div {
     font-size: 20px;
     text-align: left;
+    background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+    color: white;
 
 }
 
+.DayOne, .DayThree, .DayFive {
+    
+    background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+    color: white;
+    font-size: 20px;
+    text-align: left;
+    width: 50%;
+}
+
+.DayTwo, .DayFour {
+    color: Black;
+    font-size: 20px;
+    text-align: left;
+    width: 50%;
+}
 
 
