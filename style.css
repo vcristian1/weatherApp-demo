@@ -28,7 +28,7 @@ form h2 {
 
 #search-input {
     height: 40px;
-    width: 300px;
+    width: 250px;
     border-radius: 10px;
     margin-left: 20px;
     margin-bottom: 25px;
@@ -43,6 +43,25 @@ form h2 {
     width: 80px;
     color: white;
     font-size: 15px;
+}
+
+p {
+    font-size: 20px;
+    
+    color: white;
+    margin-bottom: 0px;
+    background: none;
+
+}
+
+#daytwo {
+    width:60%;
+    background: none;
+    color: black;
+}
+
+#daythree {
+    background: none;
 }
 
 .overview div {
@@ -69,4 +88,146 @@ form h2 {
     width: 50%;
 }
 
+#search-history-list {
+    text-align: left;
+}
 
+@media screen and (min-width:500px) {
+    #search-input {
+        height: 40px;
+        width: 150px;
+        border-radius: 10px;
+        margin-left: 20px;
+        margin-bottom: 25px;
+        font-size: 15px;
+    }
+
+    .overview div {
+        font-size: 15px;
+        text-align: left;
+        background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+        color: white;
+    
+    }
+
+    p {
+        font-size: 15px;
+        background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+        color: white;
+        margin-bottom: 0px;
+    
+    }
+
+    .DayOne, .DayThree, .DayFive {
+    
+        background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+        color: white;
+        font-size: 15px;
+        text-align: left;
+        width: 80%;
+    }
+    
+    .DayTwo, .DayFour {
+        color: Black;
+        font-size: 15px;
+        text-align: left;
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (min-width:993px) {
+    #search-input {
+        height: 40px;
+        width: 250px;
+        border-radius: 10px;
+        margin-left: 20px;
+        margin-bottom: 25px;
+        font-size: 15px;
+    }
+
+    .overview div {
+        font-size: 15px;
+        text-align: left;
+        background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+        color: white;
+    
+    }
+
+    p {
+        font-size: 15px;
+        background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+        color: white;
+        margin-bottom: 0px;
+    
+    }
+
+    .DayOne, .DayThree, .DayFive {
+    
+        background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+        color: white;
+        font-size: 15px;
+        text-align: left;
+        width: 60%;
+    }
+    
+    .DayTwo, .DayFour {
+        color: Black;
+        font-size: 15px;
+        text-align: left;
+        width: 80%;
+    }
+
+    #search-history-list {
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width:1366px) {
+    #search-input {
+        height: 40px;
+        width: 300px;
+        border-radius: 10px;
+        margin-left: 20px;
+        margin-bottom: 25px;
+        font-size: 15px;
+    }
+
+    .overview div {
+        font-size: 15px;
+        text-align: left;
+        background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+        color: white;
+    
+    }
+
+    p {
+        font-size: 15px;
+        background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+        color: white;
+        margin-bottom: 0px;
+    
+    }
+
+    .DayOne, .DayThree, .DayFive {
+    
+        background: linear-gradient(45deg, #744FC6 0%, #4F86C6 100%);
+        color: white;
+        font-size: 15px;
+        text-align: left;
+        width: 60%;
+    }
+    
+    .DayTwo, .DayFour {
+        color: Black;
+        font-size: 15px;
+        text-align: left;
+        width: 80%;
+    }
+    #search-history-list {
+        text-align: center;
+    }
+
+}

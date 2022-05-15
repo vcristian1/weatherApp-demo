@@ -15,8 +15,6 @@
     <header>
         <div class="container">
             <h1>Weather Dashboard</h1>
-            <p id="currentDay"></p>
-            <!--Input date and time from moment.js here-->
         </div>
     </header>
 
@@ -34,6 +32,7 @@
             
             <div class="col overview">
                 <h2>Overview &#127783</h2>
+                <p id="currentDay"></p>
                 <div id="location"></div>
                 <div id="temp"></div>
                 <div id="wind"></div>
@@ -50,16 +49,23 @@
             <div class="col five-day-forecast">
                 <h2>Five Day Forecast &#127783</h2>
                 <div class="DayOne">
+                    <p id="date"></p>
                     <div id="d1-temp"></div>
                     <div id="d1-wind"></div>
                     <div id="d1-humidity"></div>
                 </div>
                 <div class="DayTwo">
+                    <div>
+                        <p id="daytwo"></p>
+                    </div>
                     <div id="d2-temp"></div>
                     <div id="d2-wind"></div>
                     <div id="d2-humidity"></div>
                 </div>
                 <div class="DayThree">
+                    <div>
+                        <p id="daythree"></p>
+                    </div>
                     <div id="d3-temp"></div>
                     <div id="d3-wind"></div>
                     <div id="d3-humidity"></div>

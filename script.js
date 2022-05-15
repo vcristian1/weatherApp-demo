@@ -8,12 +8,22 @@ var city = searchInput
 var APIkey = '63e195e07e4897eb45e421f76c43b1dd';
 var searches =[]
 
-function displayDate() {
+function displayDateTime() {
   $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
 }
-setInterval(displayDate, 100);
 
 
+function displayDate () {
+  $("#date").html(moment().format("MMM Do YY"));
+}
+
+function displayDateTomorrow() {
+  $("#daytwo").html(moment().add(1, 'days').calendar());
+}
+
+function displayDayThree () {
+  $("#daythree").html(moment().add(2, 'days').calendar());
+}
 
 function currentForecast(event) {
     var apiUrl1 = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${APIkey}`;
@@ -24,6 +34,10 @@ function currentForecast(event) {
     .then(function(data) {
       drawCurrentForecast(data);
       drawFiveDayForecast(data);
+      setInterval(displayDate, 100)
+      setInterval(displayDateTime, 100);
+      setInterval(displayDateTomorrow, 100);
+      setInterval(displayDayThree, 100);
       init()
       drawSearchHistory()
       storeSearches()
@@ -60,7 +74,7 @@ function getWeather (event) {
 
 function drawCurrentForecast( d ) {
 	var fahrenheight = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
-	
+  
     document.getElementById('location').innerHTML = "City: " + d.name;
 	  document.getElementById('wind').innerHTML = "Wind Speed: " + d.wind.speed + " MPH";
 	  document.getElementById('temp').innerHTML = "Temp: " + fahrenheight + '&deg;';
