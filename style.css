@@ -64,6 +64,11 @@ p {
     background: none;
 }
 
+#dayfour {
+    background: none;
+    color: black;
+}
+
 .overview div {
     font-size: 20px;
     text-align: left;
@@ -133,6 +138,20 @@ p {
         text-align: left;
         width: 100%;
     }
+    #daytwo {
+        width:60%;
+        background: none;
+        color: black;
+    }
+    
+    #daythree {
+        background: none;
+    }
+    
+    #dayfour {
+        background: none;
+        color: black;
+    }
 
 }
 
@@ -183,6 +202,21 @@ p {
         text-align: center;
     }
 
+    #daytwo {
+        width:60%;
+        background: none;
+        color: black;
+    }
+    
+    #daythree {
+        background: none;
+    }
+    
+    #dayfour {
+        background: none;
+        color: black;
+    }
+
 }
 
 @media screen and (min-width:1366px) {
@@ -228,6 +262,21 @@ p {
     }
     #search-history-list {
         text-align: center;
+    }
+
+    #daytwo {
+        width:60%;
+        background: none;
+        color: black;
+    }
+    
+    #daythree {
+        background: none;
+    }
+    
+    #dayfour {
+        background: none;
+        color: black;
     }
 
 }

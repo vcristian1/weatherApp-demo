@@ -25,6 +25,14 @@ function displayDayThree () {
   $("#daythree").html(moment().add(2, 'days').calendar());
 }
 
+function displayDayFour () {
+  $("#dayfour").html(moment().add(3, 'days').calendar());
+}
+
+function displayDayFive () {
+  $("#dayfive").html(moment().add(4, 'days').calendar());
+}
+
 function currentForecast(event) {
     var apiUrl1 = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${APIkey}`;
     var apiUrl2 = `https://api.openweathermap.org/data/2.5/forecast?q=${city.value}&appid=${APIkey}`;
@@ -38,6 +46,8 @@ function currentForecast(event) {
       setInterval(displayDateTime, 100);
       setInterval(displayDateTomorrow, 100);
       setInterval(displayDayThree, 100);
+      setInterval(displayDayFour, 100);
+      setInterval(displayDayFive, 100);
       init()
       drawSearchHistory()
       storeSearches()
