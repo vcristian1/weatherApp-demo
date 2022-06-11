@@ -154,7 +154,7 @@ searchForm.addEventListener("submit", function(event) {
  
   // TODO: What will happen when the following functions are called?
   storeSearches();
-  // drawSearchHistory();
+  drawSearchHistory();
 });
 
 
