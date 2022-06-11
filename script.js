@@ -136,26 +136,26 @@ function init() {
   drawSearchHistory();
 }
 
-function storeSearches() {
-  // TODO: Describe the purpose of the following line of code.
-  localStorage.setItem("searches", JSON.stringify(searches));
-}
-// TODO: Describe the purpose of the following line of code.
-searchForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-  var searchText = searchInput.value.trim();
-  // TODO: Describe the functionality of the following `if` statement.
-  if (searchText === "") {
-    return;
-  }
- // TODO: Describe the purpose of the following lines of code.
-  searches.push(searchText);
-  searchInput.value = "";
+// function storeSearches() {
+//   // TODO: Describe the purpose of the following line of code.
+//   localStorage.setItem("searches", JSON.stringify(searches));
+// }
+// // TODO: Describe the purpose of the following line of code.
+// searchForm.addEventListener("submit", function(event) {
+//   event.preventDefault();
+//   var searchText = searchInput.value.trim();
+//   // TODO: Describe the functionality of the following `if` statement.
+//   if (searchText === "") {
+//     return;
+//   }
+//  // TODO: Describe the purpose of the following lines of code.
+//   searches.push(searchText);
+//   searchInput.value = "";
  
-  // TODO: What will happen when the following functions are called?
-  storeSearches();
-  drawSearchHistory();
-});
+//   // TODO: What will happen when the following functions are called?
+//   storeSearches();
+//   drawSearchHistory();
+// });
 
 
 searchButton.addEventListener("click", getWeather);
