@@ -49,7 +49,6 @@ function currentForecast(event) {
       setInterval(displayDayFour, 100);
       setInterval(displayDayFive, 100);
       init()
-      drawSearchHistory()
       storeSearches()
       console.log(apiUrl1);
       console.log(apiUrl2);
@@ -117,19 +116,13 @@ function drawFiveDayForecast( d ) {
 
 
 function drawSearchHistory() {
-  var searches =[]
-  
-  historyList.innerHTML = city.value;
-  
-  for (var i = 0; i < searches.length; i++) {
-    city.value = searches[i];
+  var searchValue = city.value
+  var newLi = document.createElement("li");
+  newLi.innerText = searchValue;
+  historyList.appendChild(newLi)
+  newLi.style.listStyleType = "none"
+  newLi.style.fontSize = "20px"
 
-    var li = document.createElement("li");
-    li.textContent = city.value;
-    li.setAttribute("data-index", i);
-
-    historyList.appendChild(li);
-  }
 }
 
 function init() {
@@ -161,7 +154,7 @@ searchForm.addEventListener("submit", function(event) {
  
   // TODO: What will happen when the following functions are called?
   storeSearches();
-  drawSearchHistory();
+  // drawSearchHistory();
 });
 
 
