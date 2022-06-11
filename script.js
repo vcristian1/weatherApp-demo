@@ -1,12 +1,12 @@
-var searchForm = document.getElementById("search-form");
-var searchInput = document.getElementById("search-input");
-var overviewContainer = document.getElementById("overview-container");
-var historyList = document.getElementById("search-history-list");
-var fiveDayForecast = document.getElementById("five-day-forecast");
-var searchButton = document.getElementById("search-button");
-var city = searchInput
-var APIkey = '63e195e07e4897eb45e421f76c43b1dd';
-var searches =[]
+let searchForm = document.getElementById("search-form");
+let searchInput = document.getElementById("search-input");
+let overviewContainer = document.getElementById("overview-container");
+let historyList = document.getElementById("search-history-list");
+let fiveDayForecast = document.getElementById("five-day-forecast");
+let searchButton = document.getElementById("search-button");
+let city = searchInput
+let APIkey = '63e195e07e4897eb45e421f76c43b1dd';
+let searches =[]
 
 function displayDateTime() {
   $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
