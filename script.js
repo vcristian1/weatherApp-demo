@@ -12,7 +12,6 @@ function displayDateTime() {
   $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
 }
 
-
 function displayDate () {
   $("#date").html(moment().format("MMM Do YY"));
 }
@@ -73,13 +72,11 @@ function fiveDayForecast () {
     });
 }
 
-
 function getWeather (event) {
     event.preventDefault();
     currentForecast()
    
 }
-
 
 function drawCurrentForecast( d ) {
 	var fahrenheight = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
@@ -114,7 +111,6 @@ function drawFiveDayForecast( d ) {
     
 }
 
-
 function drawSearchHistory() {
   var searchValue = city.value
   var newLi = document.createElement("li");
@@ -136,33 +132,4 @@ function init() {
   drawSearchHistory();
 }
 
-// function storeSearches() {
-//   // TODO: Describe the purpose of the following line of code.
-//   localStorage.setItem("searches", JSON.stringify(searches));
-// }
-// // TODO: Describe the purpose of the following line of code.
-// searchForm.addEventListener("submit", function(event) {
-//   event.preventDefault();
-//   var searchText = searchInput.value.trim();
-//   // TODO: Describe the functionality of the following `if` statement.
-//   if (searchText === "") {
-//     return;
-//   }
-//  // TODO: Describe the purpose of the following lines of code.
-//   searches.push(searchText);
-//   searchInput.value = "";
- 
-//   // TODO: What will happen when the following functions are called?
-//   storeSearches();
-//   drawSearchHistory();
-// });
-
-
 searchButton.addEventListener("click", getWeather);
-
-// window.onload = function() {
-//     showFiveDayForecast();
-// }
-
-// create a click event where on the submit of the button, it runs the showFiveDayForecast function
-// and saves the input value to the variable city before the function runs?
