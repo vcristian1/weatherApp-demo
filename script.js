@@ -118,6 +118,7 @@ function drawSearchHistory() {
   historyList.appendChild(newLi)
   newLi.style.listStyleType = "none"
   newLi.style.fontSize = "20px"
+  searchInput.value = "";
 
 }
 
